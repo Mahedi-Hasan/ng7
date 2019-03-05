@@ -1,0 +1,49 @@
+<div fxFlex fxLayout="row" fxLayoutAlign="center center" style="margin-top: 50px">
+    <div fxFlex.lt-sm="90%" fxFlex.sm="60%" fxFlex.gt-md="33%">
+        <mat-card>
+            <mat-toolbar color="primary" fxLayoutAlign="center center" style="margin-bottom:20px">
+                Please Register
+            </mat-toolbar>
+            <mat-card-content>
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">
+                    <div class="p-3" fxLayout="column" fxLayoutAlign="space-around" fxLayoutGap="20px">
+                        <mat-form-field class="w-100">
+                            <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color">account_box</mat-icon>
+                            <input matInput placeholder="Full Name" formControlName="fullName">
+                        </mat-form-field>
+                        <mat-form-field class="w-100">
+                            <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color">mail</mat-icon>
+                            <input matInput placeholder="Email" formControlName="email">
+                            <mat-error *ngIf="registerForm.controls.email.errors?.required">Email is required</mat-error>
+                            <mat-error *ngIf="registerForm.controls.email.hasError('invalidEmail')">Invalid email address</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="w-100">
+                            <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color">lock</mat-icon>
+                            <input type="password" matInput placeholder="Password" formControlName="password">
+                            <mat-error *ngIf="registerForm.controls.password.errors?.required">Password is required</mat-error>
+                            <mat-error *ngIf="registerForm.controls.password.hasError('minlength')">Password isn't long
+                                enough, minimum of 6 characters</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="w-100">
+                            <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color">lock</mat-icon>
+                            <input type="password" matInput placeholder="Confirm Password" formControlName="confirmPassword">
+                            <!-- <mat-error *ngIf="registerForm.controls.confirmPassword.hasError('mismatchedPasswords')">Passwords do not match</mat-error> -->
+                            <mat-error *ngIf="registerForm.controls.confirmPassword.hasError('mismatchedPasswords')">Password do not match !</mat-error>
+                        </mat-form-field>
+                        <div fxLayoutAlign="center center">
+                            <button mat-raised-button color="primary" class="mat-elevation-z6 w-100 mt-3" type="submit" [disabled]="!registerForm.valid">Register</button>
+                        </div>
+                    </div>
+                </form>
+
+            </mat-card-content>
+            <mat-card-actions>
+                <a mat-button routerLink="/login" color="accent" class="w-100">Allready have an account? Sign
+                    in now!</a>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
+
+
+
