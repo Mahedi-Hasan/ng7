@@ -4,12 +4,14 @@
     <span>Hi Hi Com</span>
     <span class="cust_spacer"></span>
     <mat-icon class="example-icon">verified_user</mat-icon>
+    <a [routerLink]="[ '/dashboard/about']" mat-raised-button color="accent">About</a>
+    <a [routerLink]="[ '/dashboard/contact']" mat-raised-button color="accent">Contact</a>
     <button mat-raised-button  color="accent" [matMenuTriggerFor]="menu">Profile</button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item>Item 1</button>
       <button mat-menu-item>Item 2</button>
     </mat-menu>
-    <button mat-raised-button color="accent">Logout</button>
+    <a [routerLink]="[ '/login']" mat-raised-button color="accent">Logout</a>
   </mat-toolbar-row>
 
 </mat-toolbar>
