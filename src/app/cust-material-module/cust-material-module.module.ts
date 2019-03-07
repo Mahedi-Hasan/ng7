@@ -7,15 +7,19 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 @NgModule({
   declarations: [],
   imports: [
     MatButtonModule,MatCardModule, MatFormFieldModule,MatInputModule,
-    MatSlideToggleModule,MatToolbarModule,MatIconModule,MatMenuModule
+    MatSlideToggleModule,MatToolbarModule,MatIconModule,MatMenuModule,
+    MatSidenavModule,MatCheckboxModule
   ],
   exports: [
     MatButtonModule,MatCardModule,MatFormFieldModule,MatInputModule,
-    MatSlideToggleModule,MatToolbarModule,MatIconModule,MatMenuModule
+    MatSlideToggleModule,MatToolbarModule,MatIconModule,MatMenuModule,
+    MatSidenavModule,MatCheckboxModule
   ]
 })
 export class CustMaterialModuleModule { }
