@@ -1,18 +1,19 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AuthenticationModule } from './authentication/authentication.module';
-import { AuthenticationRoutingModule } from './authentication/authentication-routing.module';
 import { DashboardModule } from './dashboard/dashboard.module';
-import { DashboardRoutingModule } from './dashboard/dashboard-routing.module';
+
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatIconModule} from '@angular/material/icon';
+import { CustMaterialModuleModule } from './cust-material-module/cust-material-module.module';
 import { SharedModule } from './shared/shared.module';
+import { AppRoutingModule } from './app-routing.module';
+
 
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CustMaterialModuleModule } from './cust-material-module/cust-material-module.module';
 
 @NgModule({
   declarations: [
@@ -23,10 +24,11 @@ import { CustMaterialModuleModule } from './cust-material-module/cust-material-m
     BrowserModule,
     BrowserAnimationsModule,
     CustMaterialModuleModule,
+    FlexLayoutModule,
+    MatIconModule,
+    SharedModule, 
     AuthenticationModule,
-    AuthenticationRoutingModule,
-    DashboardModule, DashboardRoutingModule,
-    FlexLayoutModule,MatIconModule,SharedModule,
+    DashboardModule,
     AppRoutingModule
   ],
   providers: [],

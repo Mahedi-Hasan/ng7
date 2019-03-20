@@ -15,8 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   exports: [
     CommonModule,FlexLayoutModule,MatIconModule,
-    CustMaterialModuleModule,RouterModule,FormsModule,
-    ReactiveFormsModule
+    CustMaterialModuleModule,FormsModule,
+    ReactiveFormsModule,RouterModule
   ]
 })
 export class SharedModule { }

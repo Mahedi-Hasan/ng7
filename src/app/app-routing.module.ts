@@ -1,24 +1,31 @@
-import { LoginComponent } from './authentication/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule} from '@angular/router';
 
-
-const routes = [
+const routes: Routes = [
   {
-    path: '', loadChildren: './authentication/authentication.module#AuthenticationModule'
+    path: '',
+    children:[
+      {
+        path: '', loadChildren: './authentication/authentication.module#AuthenticationModule'
+      },
+      
+    ],
   },
-  // {
-  //   path: '',
-  //   component: DashboardComponent,
-  //   children: [
-  //     {
-  //       path: '',
-  //     }
-  //   ]
-  // },
   {
-    path: '**', redirectTo: '/login', pathMatch: 'full'
+    path: 'dashboard', component:DashboardComponent,
+    children: [
+      {
+        path: '', loadChildren: './dashboard/dashboard.module#DashboardModule'
+      },
+      {
+        path: 'users', loadChildren: './dashboard/users/user.module#UserModule'
+      }
+    ]
+  },
+  
+  {
+    path: '**', redirectTo: 'login' 
   }
 ];
 

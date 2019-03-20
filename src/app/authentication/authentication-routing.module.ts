@@ -6,28 +6,25 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
 
 
 const routes: Routes = [
+
   {
     path: '', component: LoginComponent, pathMatch: 'full'
   },
-  
   {
-    path: 'login', component: LoginComponent
+    path: 'login', component: LoginComponent, pathMatch: 'full'
   },
   {
-    path: 'register', component: RegisterComponent
+    path: 'register', component: RegisterComponent, pathMatch: 'full'
   },
   {
-    path: 'forget-password', component: ForgetPasswordComponent
-  },
-  {
-    path: '**', redirectTo: '/login', pathMatch: 'full'
+    path: 'forget-password', component: ForgetPasswordComponent, pathMatch: 'full'
   }
- 
+
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  
-exports: [RouterModule]
+
+  exports: [RouterModule]
 })
 export class AuthenticationRoutingModule { }
